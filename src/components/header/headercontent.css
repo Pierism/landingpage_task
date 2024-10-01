@@ -1,0 +1,107 @@
+/* Style for the header section */
+#header {
+   /* Navbar background color */
+  padding: 15px 0; /* Padding for top and bottom */
+  position: fixed; /* Fix the navbar at the top */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  right: 0; /* Align to the right */
+  z-index: 1000; /* Ensure it appears above other content */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  background-color: rgb(0, 0, 0);
+}
+
+/* Adjust the margin of the wrapper or body to prevent content from being hidden behind the fixed navbar */
+body {
+  padding-top: 70px; /* Add padding equal to the height of the navbar */
+}
+
+/* Header area styling */
+.headerarea {
+  width: 50vw; /* Half of the viewport width */
+  margin: 0 auto; /* Center the header area */
+  display: flex; /* Flexbox layout for logo and nav links */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space between logo and nav links */
+}
+
+/* Logo styling */
+.logo img {
+  height: 50px; /* Set logo height */
+  width: auto; /* Maintain aspect ratio */
+  border-radius: 24px;
+}
+
+/* Navigation links styling */
+.navlinks {
+  flex-grow: 1; /* Allow this section to take available space */
+  text-align: center; /* Center text inside this section */
+}
+
+.navlinks ul {
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  display: inline-flex; /* Display links in a row */
+}
+
+/* Individual list item styling */
+.navlinks li {
+  margin: 0 20px; /* Space between links */
+}
+
+/* Link styling */
+.navlinks a {
+  text-decoration: none; /* Remove underline */
+  color: white; /* Text color */
+  font-size: 1.1rem; /* Font size for links */
+  position: relative; /* Position relative for pseudo-element */
+  transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect for links */
+.navlinks a:hover {
+  color: rgb(42, 186, 226); /* Lighter color on hover */
+}
+
+/* Pseudo-element for underline effect */
+.navlinks a::after {
+  content: ''; /* Empty content for pseudo-element */
+  display: block; /* Make it a block element */
+  height: 2px; /* Thickness of the underline */
+  background: white; /* Color of the underline */
+  width: 0; /* Initial width */
+  transition: width 0.3s ease; /* Smooth transition for width */
+  position: absolute; /* Position it under the text */
+  left: 50%; /* Center it horizontally */
+  bottom: -5px; /* Position below the text */
+  transform: translateX(-50%); /* Center adjustment */
+}
+
+/* Expand underline on hover */
+.navlinks a:hover::after {
+  width: 100%; /* Full width on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  #header {
+    padding: 10px 0; /* Reduced padding for smaller screens */
+  }
+
+  .headerarea {
+    flex-direction: column; /* Stack logo and nav links vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .navlinks ul {
+    flex-direction: column; /* Stack links vertically */
+    width: 100%; /* Full width for nav links */
+    text-align: left; /* Align text to the left */
+  }
+
+  .navlinks li {
+    margin: 5px 0; /* Space between links in column layout */
+  }
+}
+

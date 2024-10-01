@@ -1,0 +1,82 @@
+/* Style for the testimonial section */
+.testimonial {
+  width: 75vw; /* Half of the viewport width */
+  margin: 0 auto; /* Center the section horizontally */
+  padding: 20px;
+
+  box-sizing: border-box;
+  border-radius: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonialcontent {
+  border: 2px solid rgb(42, 186, 226);
+}
+
+span {
+  color: rgb(42, 186, 226);
+}
+
+/* Title styling */
+.testimonialarea h3 {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Service area layout using flexbox */
+.testimonialarea {
+  display: flex;
+  justify-content: space-between; /* Space between testimonial cards */
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+}
+
+/* Individual testimonial card styling */
+.testimonialarea > div {
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px; /* Padding inside cards */
+  margin: 10px; /* Space around cards */
+  flex: 1 1 calc(30% - 20px); /* Responsive card width (3 cards per row) */
+  max-width: 300px; /* Optional max width for cards */
+}
+
+/* Image styling */
+.testimonialarea img {
+  width: 60px; /* Set width for the profile images */
+  height: 60px; /* Set height for the profile images */
+  border-radius: 50%; /* Circular image */
+  margin-right: 15px; /* Space between image and text */
+}
+
+/* Text content styling */
+.testimonialarea p {
+  margin: 5px 0; /* Space between paragraphs */
+}
+
+.testimonialarea p:first-of-type {
+  font-weight: bold; /* Highlight client name */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .testimonial {
+    width: 90vw; /* Full width on smaller screens */
+  }
+
+  .testimonialarea > div {
+    flex: 1 1 calc(45% - 20px); /* 2 cards per row on small screens */
+    max-width: none; /* Remove max width on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonialarea > div {
+    flex: 1 1 100%; /* 1 card per row on very small screens */
+  }
+}
+
+p {
+  color: white;
+}
